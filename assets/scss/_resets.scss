@@ -1,0 +1,52 @@
+@import './variables';
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.mag-box-title.the-global-title {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.card {
+    border: 0px solid rgba(0, 0, 0, 0.125);
+}
+h3.orangic {
+    color: #fff;
+    border-right: 8px solid #c51919;
+    border-left: 8px solid #524751;
+    background: #a71717;
+    padding: .5rem 2rem;
+    border-top-right-radius: 50px;
+    text-align: center;
+}
+h1, h2, h3, h4, h5, h6, a h1, a h2, a h3, a h4, a h5, a h6{
+    word-wrap: break-word;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    transition: ease-in-out 4s;
+
+    &.card-title:hover{
+        color: $col1;
+        transition: ease-in-out 4s;
+
+    }
+}
+p {
+    font-family: 'Hind', sans-serif;
+    line-height: 1.75;
+    letter-spacing: 0.5px;
+    color: #532f1e;
+}
+a{
+    text-decoration: none;
+    color: #9b4b1b;
+}
+section#ads {
+    margin: 2rem 0 1rem;
+    & img.card-img-top {
+        padding: 0.6rem;
+    }
+}

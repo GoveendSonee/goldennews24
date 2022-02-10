@@ -1,0 +1,713 @@
+@import './resets';
+@import './variables';
+
+// Top Header
+section#top-header{
+    background: $b1;
+    color: $c1;
+    font-size: initial;
+    font-weight: bolder;
+    padding: .5rem 0;
+    & .container{
+        & .row{
+            & .col-lg-8{
+                & .topbar-date {
+                    margin-top: 7px;
+                }
+            }
+            & .col-lg-4{
+                & .social-icons{
+                    font-size: 1.3rem;
+                    float: right;
+                    path {
+                        color: $c1;
+                    }
+                }
+            }
+        }
+    }
+}
+// End Top Header
+
+// Top Logo 
+section#logo{
+    & .container{
+        & .row{
+            & .col-lg-4{
+                margin: auto;
+                & img.card-img-top {
+                    width: auto;
+                    height: 10rem; 
+                    object-fit: contain;
+                }
+            }
+            & .col-lg-8{
+                margin: auto;
+                & img.card-img-top {
+                    margin: 4% 0;
+                }
+            }
+        }
+    }
+}
+// End Top Logo 
+
+//  Top Menu 
+section#top-menu{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: $b1;
+    & .container{
+        & nav.main-nav{
+            height: 4rem;
+            & ul.navlinks{
+                list-style: none;
+                line-height: 4rem;
+                margin: 0;
+                padding: 0;
+                & li {
+                    display: inline-block;
+                    margin: 0px 20px;
+                    & a {
+                        color: #f4d2be;
+                        text-decoration: none;
+                        // transition: all 0.5s linear 0s;
+                        transition: ease-in-out 4s;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        &:hover {
+                            color: #fff;
+                            padding-bottom: 7px;
+                            border-bottom: 2px solid #fff;
+                        }
+                        &.contact {
+                            background-color: #7c6659;
+                            color: #fff3eb;
+                            padding: 9px 20px;
+                            border-radius: 50px;
+                            transition: ease-in-out 4s;
+                            border-bottom: none;
+                            &:hover {
+                                color: $col1;
+                                background-color: #fff;
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+            & #check {
+                display: none;
+            }
+            & .menu-btn {
+                font-size: 2rem;
+                color: white;
+                float: right;
+                line-height: 4rem;
+                margin-right: 2.5rem;
+                display: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+
+    section#top-menu{
+        & .container{
+            & nav.main-nav{
+                & ul.navlinks{
+                    position: absolute;
+                    width: 100%;
+                    height: 100vh;
+                    text-align: center;
+                    transition: all 0.5s;
+                    right: -100%;
+                    background: #222831;
+                    z-index: 999;
+                    & li {
+                        display: block;
+                        & a {
+                            font-size: 20px;
+                            &:hover {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+                &  #check:checked ~ .navlinks {
+                    right: 0;
+                    margin-top: 3.7rem;
+                }
+                & .menu-btn {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+  
+    section#top-menu{
+        & .container{
+            & nav.main-nav{
+                &  #check:checked ~ .navlinks {
+                    right: 0;
+                    margin-top: 3.7rem;
+                }
+                & .menu-btn {
+                    margin-right: 10px;
+                    font-size: 25px;
+                    &:focus {
+                        color: blue;
+                    }
+                }
+            }
+        }
+    }
+}
+//  End Top Menu 
+
+/* Breaking News  */
+.container.mt-5{
+    & .d-flex.justify-content-between.align-items-center.breaking-news.bg-white {
+        background: radial-gradient(#e7a3a3, #ffffff);
+        font-size: medium;
+        font-weight: 600;
+        & .d-flex.flex-row.flex-grow-1.flex-fill.justify-content-center.py-2.text-white.px-1.news {
+            background: $b1;
+        }
+        & .news {
+            width: 160px
+        }
+        & .news-scroll a {
+            text-decoration: none;
+        }
+    }
+}
+/* End Breaking News  */ 
+
+/* News Post */ 
+section#news-post{
+    margin-bottom: 6rem;
+    & .container{
+        & .row{
+            & .col-lg-4.card, & .col-lg-3.card, & .col-lg-6.card{
+                & img.card-img-top{
+                    width: 100%;
+                    height: 11rem;
+                    object-fit: cover;
+                    margin-top: 4rem;
+                    border-radius: 0 0 13% 0;
+                    &:hover {
+                        transform: scale(1.03);
+                        transition: transform 3s ease;
+                        overflow: hidden;
+                        object-fit: cover;
+                    }
+                }
+                & .card-body {
+                    text-align: center;
+                    padding: 11px;
+                    background: #f6f4f3;
+                    box-shadow: 0px 2px 4px 2px #f5eeea;
+                    border-radius: 0 13% 7% 7%;
+                    margin-bottom: 37px;
+
+                    & h5.card-title {
+                        color: #e20f0f;
+                        font-size: larger;
+                        font-weight: 700;
+                    }
+                    & p.card-text {
+                        font-weight: 100;
+                    }
+                    & .btn-success {
+                        color: #e20f0f;
+                        background-color: #fff;
+                        border-color: #e20f0f;
+                        transition: ease-in-out 4s;
+                        font-weight: 500;
+                        &:hover{
+                            background: #e20f0f;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        & .readmore {
+            text-align: center;
+            margin: 4rem 0;
+            
+             & a.page-link {
+                transition: ease-in-out 4s;
+                color: #e20f0f;
+                font-weight: 700;
+                font-family: sans-serif;
+            }
+        }
+    }
+}
+/* End News Post */ 
+
+// Footer 
+footer#footer-set{
+    background: #a12f23;
+    color: #fff;
+    & .col-lg-4.col-md-6.mb-5 {
+        margin-top: 4.5rem;
+        text-align: center;
+        & a.navbar-brand{
+            & h3.mb-2.text-uppercase {
+                text-align: center;
+                font-size: larger;
+                color: #b4f5b0;
+                & span.text.center {
+                    color: #fff;
+                    font-size: xx-large;
+                    font-weight: 700;
+                    text-decoration: underline;
+                }
+            }
+        }
+        & p.para {
+            text-align: justify;
+            color: #d3b9ad;
+        }
+        & a.btn.btn-outline-secondary.text-center.mr-2.px-0 {
+            transition: ease-in-out 4s;
+            color: #fff;
+        }
+        & .flex-wrap.m-n1 {
+            & .ready{
+                & span.liveMenuColor {
+                    text-align: center;
+                    padding: 1rem 2rem;
+                    box-shadow: 0px 2px 6px 2px #ffd6ba;
+                    border-radius: 0 15%;
+                    display: flex;
+                    align-items: center;
+                    margin: 0 2rem;
+                }
+            }
+        }
+        & h4.font-weight-bold.mb-4.red {
+            text-align: center;
+        }
+    }
+    & .container-fluid.py-4.px-sm-3.px-md-5 {
+        background: radial-gradient(#d27c3b, transparent);
+        font-size: large;
+        font-family: serif;
+        & a.font-weight-bold {
+            font-size: initial;
+            font-weight: bold;
+            color: #070200;
+            text-decoration: none;
+        }
+    }
+}
+// End Footer 
+
+/* Blog Page */
+
+// Sport Page 
+section#sports-page{
+    background: $b1;
+    & .mag-box-title.the-global-title {
+        color: #f15a23;
+    }
+    & .group-bunch{
+        margin-bottom: 4rem;
+        & .row{
+            & .col-md-6.col-lg-4.card {
+                text-align: center;
+                padding: 11px;
+                background: #eee6e4;
+                box-shadow: 0px 2px 6px 2px #a99486;
+            }
+            & .col-md-6.col-lg-4.small{
+                padding: 1rem;
+                & .card.mb-3{
+                    & .row.g-0{
+                        & .col-md-4{
+                            & img.img-fluid.rounded-start {
+                                width: 100%;
+                                height: 6rem;
+                                object-fit: cover;
+                            }
+                        }
+                        & .col-md-8 {
+                            background: #eee6e4;
+                            text-align: center;
+                            box-shadow: 0px 2px 6px 2px #ffd6ba;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// End Sport Page
+
+// Second Blog 
+section#second-blog{
+    & .container{
+        & .row{
+            & .col-md-12.col-lg-8.second{
+                margin-bottom: 4rem;
+                & .row{
+                    & .col-sm-12.col-md-6.col-lg-4, & .col-sm-12.col-md-6.col-lg-6 {
+                        margin: 0 0 2rem 0;
+                        & .card-body{
+                            text-align: center;
+                            padding: 11px;
+                            background: #eee6e4;
+                            box-shadow: 0px 2px 5px 2px #a99486;
+                            border-radius: 0 0 7% 7%;
+                            & h6.card-title, & h5.card-title  {
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+            & .col-md-12.col-lg-4{
+                margin-bottom: 4rem;
+                & .col-lg-12.small{
+                    & .card.mb-3{
+                        & .row.g-0{
+                            & .col-md-4{
+                                & img.img-fluid.rounded-start {
+                                    width: 100%;
+                                    height: 6rem;
+                                    object-fit: cover;
+                                }
+                            }
+                            & .col-md-8 {
+                                background: #eee6e4;
+                                text-align: center;
+                                box-shadow: 0px 2px 6px 2px #ffd6ba;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .readmore {
+            text-align: center;
+            margin: 4rem 0;
+                & a.page-link {
+                transition: ease-in-out 4s;
+                color: #e20f0f;
+                font-weight: 700;
+                font-family: sans-serif;
+            }
+        }
+    }
+}
+// End Second Blog 
+
+// Third Blog 
+section#third-blog{
+    background: $b1;
+    & .container{
+        & .row{
+            & .col-lg-4{
+                margin-bottom: 4rem;
+                & .row{
+                    & .col-lg-12{
+                        & .card-body{
+                            text-align: center;
+                            padding: 11px;
+                            background: #eee6e4;
+                            & h6.card-title{
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    & .col-lg-12.small{
+                        & .card.mb-3{
+                            & .row.g-0{
+                                & .col-md-4{
+                                    & img.img-fluid.rounded-start {
+                                        width: 100%;
+                                        height: 6rem;
+                                        object-fit: cover;
+                                    }
+                                }
+                                & .col-md-8 {
+                                    background: #eee6e4;
+                                    text-align: center;
+                                    box-shadow: 0px 2px 6px 2px #ffd6ba;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// End Third Blog 
+
+// Fourth Blog 
+section#fourth-blog{
+    & .container{
+        & .row{
+            margin-bottom: 2rem;
+            & .col-sm-6.col-md-3.col-lg-2.small.card.mb-3{
+                margin-bottom: 4rem;
+                & .col-md-12.line {
+                    background: #eee6e4;
+                    text-align: center;
+                    &:hover{
+                        box-shadow: 0px 2px 6px 2px #ffd6ba;
+                    }
+                }
+            }
+        }
+    }
+}
+// End Fourth Blog 
+
+/* Enf BLog Page */
+
+// Single Post Page 
+    // post Blog 
+    section#post-blog{
+        background: $b1;
+        & .container{
+            & .row{
+                & .col-md-12.col-lg-8.second {
+                    margin-top: 3rem;
+                    margin-bottom: 7rem;
+                    background: #e9e4e3;
+                    text-align: justify;
+                    box-shadow: 0px 2px 6px 2px #dacec6;
+                    & .card-body{
+                        & p.date strong {
+                            color: $col1;
+                        }
+                    }
+                }
+                & .col-md-12.col-lg-4{
+                    margin-bottom: 4rem;
+                    & .col-lg-12.small{
+                        & .card.mb-3{
+                            & .row.g-0{
+                                & .col-md-4{
+                                    & img.img-fluid.rounded-start {
+                                        width: 100%;
+                                        height: 6rem;
+                                        object-fit: cover;
+                                    }
+                                }
+                                & .col-md-8 {
+                                    background: #eee6e4;
+                                    text-align: center;
+                                    box-shadow: 0px 2px 6px 2px #ffd6ba;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // End post Blog 
+
+// End Single Post Page 
+
+section#contactpage{
+    & .contactroll{
+        & .row{
+            & .col-md-12.col-lg-8.mb-1, & .col-md-12.col-lg-4.mb-1{
+                & .card-body {
+                    object-fit: cover;
+                    padding: 6%;
+                    background: #fff3eb;
+                    border-radius: 3%;
+                    font-weight: 600;
+                    line-height: 2;
+                    &  .mx-auto.mb-2 {
+                        text-align: center;
+                        margin-top: 3rem;
+                        & button#submitBtn {
+                            color: #fff;
+                            background-color: #ffa075;
+                            border-color: #fd4f00;
+                            transition: ease-in-out 4s;
+                            &:hover{
+                                color: #ffa075;
+                                background-color: #fff;
+                            }
+                        }
+                    }
+                }
+                & .card-header.text-white.text-uppercase {
+                    background: #ffa075;
+                }
+            }
+        }
+    }
+}
+
+// Responsive these are the media queries used by bootstrap
+@media (min-width: 1300px) and (max-width: 1320px)  {
+     
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    // Top Logo 
+    section#logo{
+        & .container{
+            & .row{
+                & .col-lg-4{
+                    & img.card-img-logo {
+                        max-height: 6rem;
+                        width: auto;
+                    }
+                }
+                & .col-lg-8{
+                    & img.card-img-gif {
+                        margin: 2% 0;
+                        height: 64%;
+                    }
+                }
+            }
+        }
+    }
+    // End Top Logo 
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    // Top Logo 
+    section#logo{
+        & .container{
+            & .row{
+                & .col-lg-4{
+                    & img.card-img-logo {
+                        max-height: 6rem;
+                        width: auto;
+                    }
+                }
+                & .col-lg-8{
+                    & img.card-img-gif {
+                        margin-left: -10rem;
+                        height: 4rem;
+                    }
+                }
+            }
+        }
+    }
+    // End Top Logo 
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    // Top Logo 
+    section#logo{
+        & .container{
+            & .row{
+                text-align: center;
+                & .col-lg-4{
+                    & img.card-img-logo {
+                        max-height: 6rem;
+                        width: auto;
+                    }
+                }
+                & .col-lg-8{
+                    & img.card-img-gif {
+                        margin-left: 0;
+                        height: 3.4rem;
+                    }
+                }
+            }
+        }
+    }
+    // End Top Logo 
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 576px) {
+
+    // Top Header
+    section#top-header{
+        & .container{
+            & .row{
+                & .col-lg-8{
+                    & .topbar-date {
+                        margin-top: .5rem;
+                    }
+                }
+                & .col-lg-4{
+                    & .social-icons{
+                        margin-top: -1.6rem;
+                    }
+                }
+            }
+        }
+    }
+    // End Top Header
+    }
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    // Top Logo 
+    section#logo{
+        & .container{
+            & .row{
+                & .col-lg-4{
+                    & img.card-img-logo {
+                        max-height: 6rem;
+                        width: auto;
+                    }
+                }
+                & .col-lg-8{
+                    & img.card-img-gif {
+                        margin: 3%;
+                        height: 2.4rem;
+                    }
+                }
+            }
+        }
+    }
+    // End Top Logo 
+}
+
+@media (max-width: 360px) {
+  
+    // Top Logo 
+    section#logo{
+        & .container{
+            & .row{
+                & .col-lg-4{
+                    & img.card-img-logo {
+                        max-height: 6rem;
+                        width: auto;
+                    }
+                }
+                & .col-lg-8{
+                    & img.card-img-gif {
+                        margin: 3%;
+                        height: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    // End Top Logo 
+}
